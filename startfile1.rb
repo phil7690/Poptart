@@ -4,6 +4,8 @@ set_file = "set_pieces.csv"
 
 #  if user input = flat build .new from class.
 # or can you do user input = class x build .new from class???
+
+=begin
 print "Need a name: "
 name = gets.chomp
 
@@ -48,7 +50,7 @@ else
   # eventually this will be an option to create a new class
   print "type not found"
 end
-
+=end
 # contact info for each posting
 module Contact
 
@@ -77,13 +79,40 @@ module Contact
 end
 
 # https://stackoverflow.com/questions/42891288/creating-a-class-based-on-user-input
+# https://codereview.stackexchange.com/questions/46928/building-shape-based-on-user-input
+# https://stackoverflow.com/questions/34417655/using-classes-and-methods-with-user-input-for-an-interactive-program
 
-class Flat
-  include Contact
-  attr_accesor :width, :height, :style, :finish
+def flat()
+
+      puts "Enter width: "
+      width = gets.chomp
+      puts "Width entered: #{width}"
+      puts "Enter height: "
+      height = gets.chomp
+      puts "Height entered: #{height}"
+      puts "Enter style (TV or Theatre): "
+      style = gets.chomp
+      puts "Style entered: #{style}"
+      puts "Enter Finish (painted, bare, etc.): "
+      finish = gets.chomp
+      puts "Finish entered: #{finish}"
+
 end
 
-flats =
+def riser()
+end
+
+while true
+  puts "You getting rid of a flat or a riser? "
+  input = gets.chomp.downcase
+  if %w(flat riser).include?(input)
+    send("#{input}")
+    break
+  else
+    puts "No, pick one."
+  end
+end
+
 
 class Riser
 end
