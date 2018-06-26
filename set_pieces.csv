@@ -1,4 +1,12 @@
-name,type,length,width,depth/style,finish
-kat,riser,3,4,6,bare,
-test,flat,4,8,tv,painted,
-kat,flat,8,12,theatre,bare,
+name,type,length,width,depth/style,finish,rise,run,steps,,,,contact
+kat,riser,3,4,6,bare,,,,,,,me@here.net
+test,flat,4,8,tv,painted,,,,,,,me@here.net
+kat,flat,8,12,theatre,bare,,,,,,,me@here.net
+flat,5,6,tv,bare,,,,,,,,me@here.net
+kat,flat,5,6,tv,painted,,,,,,,me@there.net
+riser,8,4,6,bare,,,,,,,,me@there.net
+kat,riser,8,3,5,black,,,,,,,me@there.net
+kat,stairs,4,4,2,10 in,12 in,3,bare,,,,me@there.net
+kat,stairs,3,3,2,10,12 in,3,black,,,,yah
+kat,stairs,4,5,2,bare,5,3,5,,,,hoo
+kat,stairs,5,4,1ft,bare,8,12,15,,,,la

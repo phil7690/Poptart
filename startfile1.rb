@@ -15,7 +15,7 @@ user_input.downcase!
 
 if user_input.include? "flat"
 # this line is broken. I just want it to write to the set_file
-open(set_file, 'a') do |line|
+File.open('set_pieces.csv', 'a') do |line|
     puts "Enter width: "
     width = gets.chomp
     puts "Width entered: #{width}"
@@ -83,29 +83,77 @@ end
 # https://stackoverflow.com/questions/34417655/using-classes-and-methods-with-user-input-for-an-interactive-program
 
 def flat()
+  File.open('set_pieces.csv', 'a') do |line|
+    puts "Enter username: "
+    name = gets.chomp
+    puts "Enter length: "
+    length = gets.chomp
+    puts "Length entered: #{length}"
+    puts "Enter width: "
+    width = gets.chomp
+    puts "Wdith entered: #{width}"
+    puts "Enter style (TV or Theatre): "
+    style = gets.chomp
+    puts "Style entered: #{style}"
+    puts "Enter Finish (painted, bare, etc.): "
+    finish = gets.chomp
+    puts "Finish entered: #{finish}"
+  line.print name, ",", "flat,", length,",", width,",", style,",", finish, ",","\n"
+   end
 
-      puts "Enter width: "
-      width = gets.chomp
-      puts "Width entered: #{width}"
-      puts "Enter height: "
-      height = gets.chomp
-      puts "Height entered: #{height}"
-      puts "Enter style (TV or Theatre): "
-      style = gets.chomp
-      puts "Style entered: #{style}"
-      puts "Enter Finish (painted, bare, etc.): "
-      finish = gets.chomp
-      puts "Finish entered: #{finish}"
 
 end
 
 def riser()
+  File.open('set_pieces.csv', 'a') do |line|
+    puts "Enter username: "
+    name = gets.chomp
+      puts "Enter length: "
+      length = gets.chomp
+      puts "Length entered: #{length}"
+      puts "Enter width: "
+      width = gets.chomp
+      puts "Width entered: #{width}"
+      puts "Enter depth: "
+      depth = gets.chomp
+      puts "Depth entered: #{depth}"
+      puts "Enter Finish (painted, bare, etc.): "
+      finish = gets.chomp
+      puts "Finish entered: #{finish}"
+    line.print name, ",", "riser,", length,",", width,",", depth,",", finish, ",","\n"
+   end
 end
 
+def stair()
+  File.open('set_pieces.csv', 'a') do |line|
+    puts "Enter username: "
+    name = gets.chomp
+      puts "Enter length: "
+      length = gets.chomp
+      puts "Length entered: #{length}"
+      puts "Enter width: "
+      width = gets.chomp
+      puts "Width entered: #{width}"
+      puts "Enter depth: "
+      depth = gets.chomp
+      puts "Depth entered: #{depth}"
+      puts "Enter Finish (painted, bare, etc.): "
+      finish = gets.chomp
+      puts "Finish entered: #{finish}"
+      puts "Enter rise: "
+      rise = gets.chomp
+      puts "Enter run: "
+      run = gets.chomp
+      puts "Enter number of steps: "
+      steps = gets.chomp
+
+    line.print name, ",", "stairs,", length,",", width,",", depth,",",  finish, ",",rise, ",", run,",", steps, ",","\n"
+   end
+end
 while true
-  puts "You getting rid of a flat or a riser? "
+  puts "You getting rid of a flat, riser or stair? "
   input = gets.chomp.downcase
-  if %w(flat riser).include?(input)
+  if %w(flat riser stair).include?(input)
     send("#{input}")
     break
   else
