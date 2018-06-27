@@ -10,3 +10,6 @@ kat,stairs,4,4,2,10 in,12 in,3,bare,,,,me@there.net
 kat,stairs,3,3,2,10,12 in,3,black,,,,yah
 kat,stairs,4,5,2,bare,5,3,5,,,,hoo
 kat,stairs,5,4,1ft,bare,8,12,15,,,,la
+kat,stairs,7,3,40,bare,14,12,9,
+kat,flat,7,4,tv,red,
+kat,flat,8,4,tv,yellow,
