@@ -15,7 +15,7 @@ csv_fname = "set_pieces.csv"
 search_criteria =  { 'name' => 'kat', 'type' => 'riser' }
 
 
-
+# https://stackoverflow.com/questions/23400944/creating-an-array-of-hashes-from-user-input-in-ruby
 
 #   - The CSV has a header line, if not look at :headers option in CSV.new
 #     http://ruby-doc.org/stdlib-1.9.3/libdoc/csv/rdoc/CSV.html#method-c-new
@@ -45,8 +45,10 @@ CSV.open( csv_fname, "r", options ) do |csv|
 end
 
 matches.each do |row|
-  row = row[12]
-  puts row
+  parts = headers.map { |h| "#{h}: #{row[h]}".ljust(20) }
+  puts parts.join(" ")
+  # row = row[12]
+#  puts row
 end
 
 # dump the results, sorted by percent column descending
