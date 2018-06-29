@@ -12,7 +12,38 @@ csv_fname = "set_pieces.csv"
 
 # the key is the column in the csv to check, the value is what to match in that
 # column
-search_criteria =  { 'name' => 'kat', 'type' => 'riser' }
+
+
+
+
+puts "What are you looking for? "
+  type = gets.chomp
+  if search_criteria[type] == nil
+    puts "That movie does not exist"
+  else
+    puts "What is the new rating you'd like to give to this movie?"
+    thing = gets.chomp
+    search_criteria[type] = thing
+    puts "#{title} has been updated with new rating of #{rating}."
+  end
+
+  search_criteria =  { 'name' => 'kat', 'type' => 'flat' }
+
+
+#  search_criteria.each_key {
+#      |z| puts "#{z} : "
+#      user_input = gets.chomp
+#      questions = %w{name type}
+#     answers = questions.inject({}) { |hash, question|
+#       print "#{question}: "
+#       answer = gets.chomp
+#       break hash if answer == "q"
+#       hash[question] = answer
+#       hash
+#     }
+#     p answers
+
+#    }
 
 
 # https://stackoverflow.com/questions/23400944/creating-an-array-of-hashes-from-user-input-in-ruby
